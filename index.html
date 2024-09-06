@@ -12,13 +12,13 @@
 		  const text = params.get('text'); 
 		  const color = params.get('color'); 
 		  if (mode === 'text' && text) {
-	            var text = document.getElementById("modetext");
+	            var textcolor = document.getElementById("modetext");
 		    document.getElementById('modetext').textContent = text;	
 		    if (color){
-			    text.style.color = color;
+			    textcolor.style.color = color;
 		    }
 			else{
-				text.style.color = 'black';
+				textcolor.style.color = 'black';
 			}
 		  }
 		  else{
