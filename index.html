@@ -11,8 +11,8 @@
 	  document.getElementById('text-to-change').textContent = newText;
 	}
 	window.onload = function() {
-	  const modeParam = getQueryParam('mode');
-	  const valueParam = getQueryParam('text');
+	  const modeParam = urlParams.get('mode');
+	  const valueParam = urlParams.get('text');
 	  if (valueParam !== '' && modeParam === 'text') {
 	    updatePageText(valueParam);
 	  }
