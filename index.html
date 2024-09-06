@@ -10,8 +10,16 @@
 		  const params = new URLSearchParams(window.location.search);		
 		  const mode = params.get('mode');
 		  const text = params.get('text'); 
+		  const color = params.get('color'); 
 		  if (mode === 'text' && text) {
+	            var text = document.getElementById("modetext");
 		    document.getElementById('modetext').textContent = text;	
+		    if (color){
+			    text.style.color = color;
+		    }
+			else{
+				text.style.color = 'black';
+			}
 		  }
 		  else{
 		    document.getElementById('modetext').textContent = 'There is nothing, please check if your website address is incorrect.';	
