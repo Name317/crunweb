@@ -3,25 +3,14 @@
     <meta charset = "UTF-8">
     <title>317's Code Run Get web</title>
     <script>
-	function getQueryParam(param) {
-	  const urlParams = new URLSearchParams(window.location.search);
-	  return urlParams.get(param);
+	var urlParams = new URLSearchParams(window.location.search);
+	var mode = urlParams.get('mode');
+	if (mode === 'text') {
+	  document.getElementById("text-to-change").innerHTML = urlParams.get('text');
+	} else {
+	  document.getElementById("text-to-change").innerHTML = "There is nothing,please check if your website address is correct.";
 	}
-	function updatePageText(newText) {
-	  document.getElementById('text-to-change').textContent = newText;
-	}
-	window.onload = function() {
-	  const modeParam = urlParams.get('mode');
-	  const valueParam = urlParams.get('text');
-	  if (valueParam !== '' && modeParam === 'text') {
-	    updatePageText(valueParam);
-	  }
-	  else{
-	    updatePageText("There is nothing,please check if your website address is correct.");
-	  }
-	};
     </script>
-  </head>
   <body>
     <h1 id="text-to-change"></h1>
   </body>
