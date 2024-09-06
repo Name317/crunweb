@@ -6,18 +6,14 @@
 	<body>
 	<div id = "modetext"></div>
 	<script>
-		function setTextColor(text, hexColor) {
-  			return <h1 style="color: #${hexColor};">${text}</h1>;
-		}
 		function showTextParam() {
 		  const url = new URL(window.location.href);
-		  const colorParam = url.searchParams.get('color');
+		  const color = url.searchParams.get('color');
 		  const mode = url.searchParams.get('mode');
 		  const text = url.searchParams.get('text');
 		  if (mode === 'text' && text) {
-	          	var textcolor = document.getElementById("modetext");
 			if (colorParam !== null) {
-  		    		modetext.style.color = colorParam;
+  		    		modetext.style.color = color;
 				document.getElementById('modetext').textContent = text;	
 		  	} else {
   		        	modetext.style.color = 'black';
