@@ -3,24 +3,26 @@
     <meta charset = "UTF-8">
     <title>317's Code Run Get web</title>
     <script>
-      function getQueryParam(param) {
-    // 解析URL参数为对象
-    var queryParams = new URLSearchParams(window.location.search);
-    // 检查参数是否存在
-    if (queryParams.has(param)) {
-        // 获取参数值
-        return queryParams.get(param);
-    }
-    return null;
+      // 获取URL参数
+function getQueryParam(param) {
+  const urlParams = new URLSearchParams(window.location.search);
+  return urlParams.get(param);
 }
  
-// 使用示例
-var paramValue = getQueryParam('param'); // 假设当前网址是: http://example.com/?param=value
-if (paramValue) {
-    console.log('参数存在，值为:', paramValue);
-} else {
-    console.log('参数不存在');
+// 更改页面文字的函数
+function updatePageText(newText) {
+  document.getElementById('text-to-change').textContent = newText;
 }
+ 
+// 当页面加载完成时执行
+window.onload = function() {
+  // 获取URL中的text参数
+  const textParam = getQueryParam('text');
+  if (textParam) {
+    // 如果存在text参数，更改页面文字
+    updatePageText(textParam);
+  }
+};
     </script>
   </head>
   <body>
