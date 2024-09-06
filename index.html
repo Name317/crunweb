@@ -11,8 +11,10 @@
 		  const mode = params.get('mode');
 		  const text = params.get('text'); 
 		  if (mode === 'text' && text) {
-		    console.log(`Text parameter is: ${text}`);
 		    document.getElementById('modetext').textContent = text;	
+		  }
+		  else{
+		    document.getElementById('modetext').textContent = 'There is nothing, please check if your website address is incorrect.';	
 		  }
 		}
 		showTextParam();
