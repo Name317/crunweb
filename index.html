@@ -13,7 +13,7 @@
 	window.onload = function() {
 	  const modeParam = getQueryParam('mode');
 	  const valueParam = getQueryParam('text');
-	  if (valueParam && mode === 'text') {
+	  if (valueParam !=== '' && mode === 'text') {
 	    updatePageText(valueParam);
 	  }
 	  else{
