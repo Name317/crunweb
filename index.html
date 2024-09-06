@@ -6,15 +6,16 @@
 	<body>
 	<div id = "modetext"></div>
 	<script>
-		var url = window.location.href;
-		var params = new URLSearchParams(url.split('?')‌:ml-citation{ref="1" data="citationList"});
-		var mode = params.get('mode');
-		var text = params.get('text');
-		if (mode === 'text') {
-		    document.getElementById('modetext').innerText = text;
-		} else {
-		    document.getElementById('modetext').innerText = 'There is nothing,please check if your website address is correct.';
+		function showTextParam() {
+		  const params = new URLSearchParams(window.location.search);		
+		  const mode = params.get('mode');
+		  const text = params.get('text'); 
+		  if (mode === 'text' && text) {
+		    console.log(`Text parameter is: ${text}`);
+		    document.getElementById('modetext').textContent = text;	
+		  }
 		}
+		showTextParam();
 	</script>
 	</body>
 </html>
