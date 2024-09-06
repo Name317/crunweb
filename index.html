@@ -7,15 +7,15 @@
 	<div id = "modetext"></div>
 	<script>
 		function showTextParam() {
-		  const params = new URLSearchParams(window.location.search);		
-		  const mode = params.get('mode');
-		  const text = params.get('text'); 
-		  const color = params.get('color'); 
+		  const url = new URL(window.location.href);
+		  const colorParam = url.searchParams.get('color');
 		  if (mode === 'text' && text) {
-	            var textcolor = document.getElementById("modetext");
+	        var textcolor = document.getElementById("modetext");
 		    document.getElementById('modetext').textContent = text;	
-		    if (color !== ''){
-			    textcolor.style.color = color;
+			if (colorParam) {
+  		    	modetext.style.color = colorParam;
+		  	} else {
+  		        modetext.style.color = 'black';
 		    }
 		  }
 		  else{
