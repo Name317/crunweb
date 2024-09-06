@@ -9,6 +9,8 @@
 		function showTextParam() {
 		  const url = new URL(window.location.href);
 		  const colorParam = url.searchParams.get('color');
+		  const mode = url.searchParams.get('mode');
+		  const text = url.searchParams.get('text');
 		  if (mode === 'text' && text) {
 	        var textcolor = document.getElementById("modetext");
 		    document.getElementById('modetext').textContent = text;	
