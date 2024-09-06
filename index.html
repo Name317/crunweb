@@ -1,17 +1,20 @@
 <html>
-  <head>
-    <meta charset = "UTF-8">
-    <title>317's Code Run Get web</title>
-    <script>
-	var urlParams = new URLSearchParams(window.location.search);
-	var mode = urlParams.get('mode');
-	if (mode === 'text') {
-	  document.getElementById("text-to-change").innerHTML = urlParams.get('text');
-	} else {
-	  document.getElementById("text-to-change").innerHTML = "There is nothing,please check if your website address is correct.";
-	}
-    </script>
-  <body>
-    <h1 id="text-to-change"></h1>
-  </body>
+	<head>
+		<meta charset="UTF-8">
+		<title>317's Run Code Get Web</title>
+	</head>
+	<body>
+	<div id = "modetext"></div>
+	<script>
+		var url = window.location.href;
+		var params = new URLSearchParams(url.split('?')‌:ml-citation{ref="1" data="citationList"});
+		var mode = params.get('mode');
+		var text = params.get('text');
+		if (mode === 'text') {
+		    document.getElementById('modetext').innerText = text;
+		} else {
+		    document.getElementById('modetext').innerText = 'There is nothing,please check if your website address is correct.';
+		}
+	</script>
+	</body>
 </html>
