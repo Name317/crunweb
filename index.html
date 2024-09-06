@@ -3,30 +3,26 @@
     <meta charset = "UTF-8">
     <title>317's Code Run Get web</title>
     <script>
-      // 获取URL参数
-function getQueryParam(param) {
-  const urlParams = new URLSearchParams(window.location.search);
-  return urlParams.get(param);
-}
- 
-// 更改页面文字的函数
-function updatePageText(newText) {
-  document.getElementById('text-to-change').textContent = newText;
-}
- 
-// 当页面加载完成时执行
-window.onload = function() {
-  // 获取URL中的text参数
-  const textParam = getQueryParam('text');
-  if (textParam) {
-    // 如果存在text参数，更改页面文字
-    updatePageText(textParam);
-  }
-};
+	function getQueryParam(param) {
+	  const urlParams = new URLSearchParams(window.location.search);
+	  return urlParams.get(param);
+	}
+	function updatePageText(newText) {
+	  document.getElementById('text-to-change').textContent = newText;
+	}
+	window.onload = function() {
+	  const modeParam = getQueryParam('mode');
+	  const valueParam = getQueryParam('text');
+	  if (valueParam && mode === text) {
+	    updatePageText(valueParam);
+	  }
+	  else{
+	    updatePageText("There is nothing,please check if your website address is correct.");
+	  }
+	};
     </script>
   </head>
   <body>
-    <h1>这里可以运行点什么……你说呢？我不知道。</h1>
-    <p id="text-to-change">这里的文字会根据URL参数改变。</p>
+    <h1 id="text-to-change"></h1>
   </body>
 </html>
