@@ -4,7 +4,7 @@
 		<title>317's Run Code Get Web</title>
 	</head>
 	<body>
-	<div id = "modetext"></div>
+	<div id = "modiv"></div>
 	<script>
 		function showTextParam() {
 		  const url = new URL(window.location.href);
@@ -17,19 +17,22 @@
 		  const tos = url.searchParams.get('to');
 		  const he = url.searchParams.get('h');
 		  const we = url.searchParams.get('w');
+		  const lop = url.searchParams.get('loop');
+		  const st = url.searchParams.get('start');
+		  const sd = url.searchParams.get('sound');
 		  if (mode === 'text' && text) {
 			if (color) {
-  		    		modetext.style.color = color;
+  		    		modiv.style.color = color;
 				if (style){
-					modetext.style.fontFamily = style;
+					modiv.style.fontFamily = style;
 				}
-				document.getElementById('modetext').textContent = text;	
+				document.getElementById('modiv').textContent = text;	
 		  	} else {
-  		        	modetext.style.color = 'black';
+  		        	modiv.style.color = 'black';
 				if (style){
-					modetext.style.fontFamily = style;
+					modiv.style.fontFamily = style;
 				}
-				document.getElementById('modetext').textContent = text;
+				document.getElementById('modiv').textContent = text;
 		    }
 		  }
 		  else if (mode === 'button' && buname && lil){
@@ -66,6 +69,17 @@
 				  img.height = he;
 			  }
   			  document.body.appendChild(img);
+		  }
+		  else if (mode == 'video' && tos){
+			  var video = document.createElement('video');
+ 			  video.src = tos;
+			  video.controls = true; // 添加播放控件
+			  video.autoplay = st; // 不要自动播放
+			  video.muted = sd; // 不要静音
+			  video.loop = lop; // 不循环播放
+			  video.preload = 'auto';
+			  var container = document.getElementById('modiv'); // 假设有一个ID为video-container的容器
+			  container.appendChild(video);
 		  }
 		  else{
 		    document.getElementById('modetext').textContent = '): There is nothing, please check if your website address is incorrect.';	
