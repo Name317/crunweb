@@ -12,7 +12,7 @@
 		  const mode = url.searchParams.get('mode');
 		  const text = url.searchParams.get('text');
 		  if (mode === 'text' && text) {
-			if (colorParam !== null) {
+			if (color) {
   		    		modetext.style.color = color;
 				document.getElementById('modetext').textContent = text;	
 		  	} else {
