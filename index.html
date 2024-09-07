@@ -38,14 +38,21 @@
 		  else if (mode === 'button' && buname && lil){
 			  if (lil === 'alert'){
 				  if (!tos){
-					  tos = ' ';
+					var btn = document.createElement("button");
+				  	btn.innerHTML = buname;
+				  	document.body.appendChild(btn);
+				  	btn.addEventListener("click", function() {
+				  	    alert(' ');
+				  	});
 				  }
-				  var btn = document.createElement("button");
-				  btn.innerHTML = buname;
-				  document.body.appendChild(btn);
-				  btn.addEventListener("click", function() {
-				      alert(tos);
-				  });
+				  else{
+				  	var btn = document.createElement("button");
+				  	btn.innerHTML = buname;
+				  	document.body.appendChild(btn);
+				  	btn.addEventListener("click", function() {
+				  	    alert(tos);
+				  	});
+				  }
 			  }
 			  else if (lil === 'jump' && tos){
 				  var btn = document.createElement("button");
