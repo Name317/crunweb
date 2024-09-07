@@ -13,3 +13,9 @@ _（后面可加 `&color=文字颜色` 和 `&style=文字字体名称`）_
 
 > 跳转网页：
  - `https://name317.github.io/crunweb/?mode=button&name=按钮名称&way=jump&to=要跳转的网址`
+
+### 3. 图片显示
+
+ - `https://name317.github.io/crunweb/?mode=picture&to=图片URL`
+
+_（后面可加 `&w=缩放宽度` 和 `&h=缩放高度`）_
