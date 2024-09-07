@@ -11,15 +11,22 @@
 		  const color = url.searchParams.get('color');
 		  const mode = url.searchParams.get('mode');
 		  const text = url.searchParams.get('text');
+		  const style = url.searchParams.get('style');
 		  const buname = url.searchParams.get('name');
 		  const lil = url.searchParams.get('way');
 		  const tos = url.searchParams.get('to');
 		  if (mode === 'text' && text) {
 			if (color) {
   		    		modetext.style.color = color;
+				if (style){
+					modetext.style.fontFamily = style;
+				}
 				document.getElementById('modetext').textContent = text;	
 		  	} else {
   		        	modetext.style.color = 'black';
+				if (style){
+					modetext.style.fontFamily = style;
+				}
 				document.getElementById('modetext').textContent = text;
 		    }
 		  }
