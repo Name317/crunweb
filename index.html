@@ -11,6 +11,9 @@
 		  const color = url.searchParams.get('color');
 		  const mode = url.searchParams.get('mode');
 		  const text = url.searchParams.get('text');
+		  const buname = url.searchParams.get('name');
+		  const lil = url.searchParams.get('way');
+		  const tos = url.searchParams.get('to');
 		  if (mode === 'text' && text) {
 			if (color) {
   		    		modetext.style.color = color;
@@ -18,7 +21,28 @@
 		  	} else {
   		        	modetext.style.color = 'black';
 				document.getElementById('modetext').textContent = text;
-		    	}
+		    }
+		  }
+		  else if (mode === 'button' && buname && lil){
+			  if (lil === 'alert'){
+				  var btn = document.createElement("button");
+				  btn.innerHTML = buname;
+				  document.body.appendChild(btn);
+				  btn.addEventListener("click", function() {
+				      alert(tos);
+				  });
+			  }
+			  else if (lil === 'jump' && tos){
+				  var btn = document.createElement("button");
+				  btn.innerHTML = buname;
+				  document.body.appendChild(btn);
+				  btn.addEventListener("click", function() {
+				      window.location.href = "tos";
+				  });
+			  }
+			  else{
+				  document.getElementById('modetext').textContent = 'There is nothing, please check if your website address is incorrect.';	
+			  }
 		  }
 		  else{
 		    document.getElementById('modetext').textContent = 'There is nothing, please check if your website address is incorrect.';	
