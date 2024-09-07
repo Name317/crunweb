@@ -26,7 +26,7 @@
 		  else if (mode === 'button' && buname && lil){
 			  if (lil === 'alert'){
 				  if (!tos){
-					  tos = '';
+					  tos = ' ';
 				  }
 				  var btn = document.createElement("button");
 				  btn.innerHTML = buname;
@@ -40,7 +40,7 @@
 				  btn.innerHTML = buname;
 				  document.body.appendChild(btn);
 				  btn.addEventListener("click", function() {
-				      window.location.href = "tos";
+				      window.open(tos, '_blank');  
 				  });
 			  }
 			  else{
