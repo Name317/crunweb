@@ -25,6 +25,9 @@
 		  }
 		  else if (mode === 'button' && buname && lil){
 			  if (lil === 'alert'){
+				  if (!tos){
+					  tos = '';
+				  }
 				  var btn = document.createElement("button");
 				  btn.innerHTML = buname;
 				  document.body.appendChild(btn);
