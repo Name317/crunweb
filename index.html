@@ -88,6 +88,9 @@
 			  var container = document.getElementById('modiv'); // 假设有一个ID为video-container的容器
 			  container.appendChild(video);
 		  }
+		  else if (mode == 'html' && tos){
+			  document.write(tos);
+		  }
 		  else{
 		    document.getElementById('modiv').textContent = '): There is nothing, please check if your website address is incorrect.';	
 		  }
