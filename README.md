@@ -1,5 +1,7 @@
 # 使用方法：
 
+#### 注：十六进制RGB表示法用不了（`#RRGGBB`，如 `#ffffff`），但可以用十进制的括号表示，如 `rgb(rrr,ggg,bbb)`，`rgb(255,255,255)`。
+
 ### 1. 显示文字。
 
  - `https://name317.github.io/crunweb/?mode=text&text=文字内容`
