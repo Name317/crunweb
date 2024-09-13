@@ -20,6 +20,12 @@
 		  const lop = url.searchParams.get('loop');
 		  const st = url.searchParams.get('start');
 		  const sd = url.searchParams.get('sound');
+		  const obi = url.searchParams.get('cbi').split(",");
+		  const obj = url.searchParams.get('cbj').split(",");
+		  const obs = url.searchParams.get('cbs').split(",");
+		  const osi = url.searchParams.get('csi').split(",");
+		  const op = url.searchParams.get('cp').split(",");
+		  const ov = url.searchParams.get('cv').split(",");
 		  if (mode === 'text' && text) {
 			if (color) {
   		    		modiv.style.color = color;
@@ -90,6 +96,18 @@
 		  }
 		  else if (mode == 'html' && tos){
 			  document.write(tos);
+		  }
+		  else if (mode == 'pre' && tos){
+			  var stringToSplit = tos;
+			  var bi = 0,bj = 0,bs = 0,si = 0,p = 0,v = 0;
+        		  var splitString = stringToSplit.split(",");
+			  for (var i = 0; i < splitString.length; i++) {
+        			var doi = splitString[i];
+				if (doi === 'buttoninfo'){
+					document.write('<button onclick = "alert(&apos;' + obi[bi * 2] + '&apos;)">' + obi[bi * 2 + 1] + '</button>');
+					bi++;
+				}
+        		  }
 		  }
 		  else{
 		    document.getElementById('modiv').textContent = '): There is nothing, please check if your website address is incorrect.';	
