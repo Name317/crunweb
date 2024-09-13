@@ -20,12 +20,12 @@
 		  const lop = url.searchParams.get('loop');
 		  const st = url.searchParams.get('start');
 		  const sd = url.searchParams.get('sound');
-		  const obi = url.searchParams.get('cbi').split(",");
-		  const obj = url.searchParams.get('cbj').split(",");
-		  const obs = url.searchParams.get('cbs').split(",");
-		  const osi = url.searchParams.get('csi').split(",");
-		  const op = url.searchParams.get('cp').split(",");
-		  const ov = url.searchParams.get('cv').split(",");
+		  var obi = String(url.searchParams.get('cbi')).split(",");
+		  var obj = String(url.searchParams.get('cbj')).split(",");
+		  var obs = String(url.searchParams.get('cbs')).split(",");
+		  var osi = String(url.searchParams.get('csi')).split(",");
+		  var op = String(url.searchParams.get('cp')).split(",");
+		  var ov = String(url.searchParams.get('cv')).split(",");
 		  if (mode === 'text' && text) {
 			if (color) {
   		    		modiv.style.color = color;
