@@ -104,11 +104,16 @@
 			  for (var i = 0; i < splitString.length; i++) {
         			var doi = splitString[i];
 				if (doi === 'buttoninfo'){
-					document.write('<button onclick = "alert(&apos;' + obi[bi * 2] + '&apos;)">' + obi[bi * 2 + 1] + '</button>');
+					document.write('<button onclick = "alert(&apos;' + obi[bi * 2 + 1] + '&apos;)">' + obi[bi * 2] + '</button>');
 					document.write('<br>');
 					bi++;
 				}
-        		  }
+				if (doi === 'buttonjump'){
+					document.write('<button onclick = "window.open(obj[bj * 2 + 1], &apos;_blank&apos;);">' + obj[bj * 2] + '</button>');
+					document.write('<br>');
+					bj++;
+				}
+        		  }// 
 		  }
 		  else{
 		    document.getElementById('modiv').textContent = '): There is nothing, please check if your website address is incorrect.';	
