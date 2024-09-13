@@ -113,6 +113,16 @@
 					document.write('<br>');
 					bj++;
 				}
+				if (doi === 'bigsmall'){
+					document.write('<h1>' + obs[bs * 2] + '</h1>');
+					document.write('<h3>' + obs[bs * 2 + 1] + '</h3>');
+					bs++;
+				}
+				if (doi === 'smallinfo'){
+					document.write('<p title = "' + osi[si * 2 + 1] + '">' + osi[si * 2] + '</p>');
+					document.write('<br>');
+					bs++;
+				}
         		  }
 		  }
 		  else{
