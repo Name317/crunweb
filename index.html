@@ -122,30 +122,42 @@
 			  for (var i = 0; i < splitString.length; i++) {
         			var doi = splitString[i];
 				if (doi === 'buttoninfo'){
-					document.write('<button class = "' + weizhi[bi + bj + bs + si + v + p] + '" onclick = "alert(&apos;' + obi[bi * 2 + 1] + '&apos;)">' + obi[bi * 2] + '</button>');
-					document.write('<br>');
+					document.write('<span class = "' + weizhi[bi + bj + bs + si + v + p] + '">');
+					document.write('<button onclick = "alert(&apos;' + obi[bi * 2 + 1] + '&apos;)">' + obi[bi * 2] + '</button>');
+					document.write('</span>');
 					bi++;
 				}
 				if (doi === 'buttonjump'){
+					document.write('<span class = "' + weizhi[bi + bj + bs + si + v + p] + '">');
 					document.write('<button class = "' + weizhi[bi + bj + bs + si + v + p] + '" onclick = "window.open(&apos;' + obj[bj * 2 + 1] + '&apos;, ' + '&apos;_blank&apos;' + ')">' + obj[bj * 2] + '</button>');
-					document.write('<br>');
+					document.write('</span>');
 					bj++;
 				}
 				if (doi === 'bigsmall'){
-					document.write('<h1 class = "' + weizhi[bi + bj + bs + si + v + p] + '">' + obs[bs * 2] + '</h1>');
-					document.write('<h3 class = "' + weizhi[bi + bj + bs + si + v + p] + '">' + obs[bs * 2 + 1] + '</h3>');
+					document.write('<span class = "' + weizhi[bi + bj + bs + si + v + p] + '">');
+					document.write('<h1>' + obs[bs * 2] + '</h1>');
+					document.write('</span>');
+					document.write('<span class = "' + weizhi[bi + bj + bs + si + v + p] + '">');
+					document.write('<h3>' + obs[bs * 2 + 1] + '</h3>');
+					document.write('</span>');
 					bs++;
 				}
 				if (doi === 'smallinfo'){
-					document.write('<h4 class = "' + weizhi[bi + bj + bs + si + v + p] + '"' + ' title = "' + osi[si * 2 + 1] + '">' + osi[si * 2] + '</h4>');
+					document.write('<span class = "' + weizhi[bi + bj + bs + si + v + p] + '">');
+					document.write('<h4' + ' title = "' + osi[si * 2 + 1] + '">' + osi[si * 2] + '</h4>');
+					document.write('</span>');
 					si++;
 				}
 				if (doi === 'video'){
-					document.write('<iframe class = "' + weizhi[bi + bj + bs + si + v + p] + '" src = "' + ov[si * 2] + '" title = "' + ov[si * 2 + 1] + '"></iframe>');
+					document.write('<span class = "' + weizhi[bi + bj + bs + si + v + p] + '">');
+					document.write('<iframe' + '" src = "' + ov[si * 2] + '" title = "' + ov[si * 2 + 1] + '"></iframe>');
+					document.write('</span>');
 					v++;
 				}
 				if (doi === 'picture'){
-					document.write('<img class = "' + weizhi[bi + bj + bs + si + v + p] + '" src = "' + op[si * 2] + '" title = "' + op[si * 2 + 1] + '"></img>');
+					document.write('<span class = "' + weizhi[bi + bj + bs + si + v + p] + '">');
+					document.write('<img' + '" src = "' + op[si * 2] + '" title = "' + op[si * 2 + 1] + '"></img>');
+					document.write('</span>');
 					p++;
 				}
         		  }
