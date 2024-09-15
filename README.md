@@ -41,3 +41,7 @@ _（后面可加 `&loop=1`（开启循环播放模式） ，`&sound=1`（视频�
  - `https://name317.github.io/crunweb/?mode=html&to=HTML代码`
 
 **注：请确保 `html` 代码转义过（转义和没转义都试试）且能够正常运行，且不含转义字符和 `#`，`&`，`?`，`=`。！**
+
+### 6.简单网页搭建
+
+ [请点击我，开始搭建网页。](https://name317.github.io/toolsby317/)
