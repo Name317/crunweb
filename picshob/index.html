@@ -1,1 +1,42 @@
-
+<html>
+  <head>
+  </head>
+  <body>
+    <input type="file" id="imageInput">
+    <script>
+    var stink = null;
+    document.getElementById('imageInput').addEventListener('change', function(e) {
+        var file = e.target.files[0]; // 获取文件引用
+        var reader = new FileReader(); // 创建FileReader对象
+        reader.onload = function(e) { // 文件读取成功完成后执行的回调函数
+            var base64String = e.target.result;
+            stink = base64String;
+            dolo(stink,file.name);
+        };
+        reader.readAsDataURL(file); // 读取文件为DataURL
+    );
+    function dolo(whd,moc){
+        const repo = 'Name317/crunweb'; // 替换为你的用户名和仓库名
+        const branch = 'main'; // 替换为你想要上传到的分支
+        const fileContent = whd; // 图片的Base64编码
+        const fileName = moc; // 文件名
+        const token = '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'; // 你的个人访问令牌
+        fetch(`https://api.github.com/repos/${repo}/contents/${fileName}`, {
+          method: 'PUT',
+          headers: {
+            'Authorization': `Bearer ${token}`,
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify({
+            message: 'Commit message',
+            content: fileContent.split(',')[1], // 去掉Base64编码的前缀
+            branch: branch
+          })
+        })
+        .then(response => response.json())
+        .then(data => console.log(data))
+        .catch(error => console.error(error));
+    }
+    </script>
+  </body>
+</html>
