@@ -61,20 +61,20 @@
 				if (style){
 					modiv.style.fontFamily = style;
 				}
-				document.getElementById('modiv').innerHTML = text;	
+				document.getElementById('modiv').innerText = text;	
 		  	} else {
   		        	modiv.style.color = 'black';
 				if (style){
 					modiv.style.fontFamily = style;
 				}
-				document.getElementById('modiv').innerHTML = text;
+				document.getElementById('modiv').innerText = text;
 		    }
 		  }
 		  else if (mode === 'button' && buname && lil){
 			  if (lil === 'alert'){
 				  if (!tos){
 					var btn = document.createElement("button");
-				  	btn.innerHTML = buname;
+				  	btn.innerText = buname;
 				  	document.body.appendChild(btn);
 				  	btn.addEventListener("click", function() {
 				  	    alert(' ');
@@ -82,7 +82,7 @@
 				  }
 				  else{
 				  	var btn = document.createElement("button");
-				  	btn.innerHTML = buname;
+				  	btn.innerText = buname;
 				  	document.body.appendChild(btn);
 				  	btn.addEventListener("click", function() {
 				  	    alert(tos);
@@ -91,7 +91,7 @@
 			  }
 			  else if (lil === 'jump' && tos){
 				  var btn = document.createElement("button");
-				  btn.innerHTML = buname;
+				  btn.innerText = buname;
 				  document.body.appendChild(btn);
 				  btn.addEventListener("click", function() {
 				      window.open(tos, '_blank');  
